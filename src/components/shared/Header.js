@@ -18,6 +18,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+		<Nav.Item>
+			<Link to='mushrooms' style={linkStyle}>
+				Create a Mushroom
+			</Link>
+		</Nav.Item>
 	</>
 )
 
@@ -29,6 +34,7 @@ const unauthenticatedOptions = (
         <Nav.Item>
 		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>
+		
 	</>
 )
 
@@ -46,7 +52,7 @@ const Header = ({ user }) => (
 	<Navbar bg='primary' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
-                react-auth-template
+                Mushroom, Mushroom
             </Link>
         </Navbar.Brand>
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
