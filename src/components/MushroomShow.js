@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react' 
-import { useParams } from 'react-router-dom'
-import { mushroomShow, mushroomUpdate } from '../api/mushroom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { mushroomShow, mushroomUpdate, mushroomDelete } from '../api/mushroom'
 import MushroomUpdate from './MushroomUpdate'
 
 
@@ -8,8 +8,10 @@ const MushroomShow = ({ user, msgAlert }) => {
 
     const [mushroom, setMushroom] = useState({})
     const [isUpdateShown, setIsUpdateShown] = useState(false)
+    const [deleted, setDeleted] = useState(false)
 
     const { id } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         mushroomShow(user, id)
@@ -52,6 +54,28 @@ const MushroomShow = ({ user, msgAlert }) => {
         })
     }
 
+    const deleteMushroom = () => {
+
+        mushroomDelete(mushroom, user, id)
+        .then(() => {
+            setDeleted(true)
+            msgAlert({
+                heading: 'Success',
+                message: 'Deleted Mushroom',
+                variant: 'success'
+            })
+        })
+        .catch((error) => {
+            msgAlert({
+                heading: 'Failure',
+                message: 'Delete Mushroom Failure' + error,
+                variant: 'danger'
+            })
+        })
+    }
+
+    if (deleted) navigate('/mushrooms')
+
     return (
         <>
             <h3>Common Name: {mushroom.commonName}</h3>
@@ -65,6 +89,7 @@ const MushroomShow = ({ user, msgAlert }) => {
 						handleUpdateMushroom={handleUpdateMushroom}
 					/>
                 )}
+                <button onClick={deleteMushroom}>Delete</button>
         </>
     )
 

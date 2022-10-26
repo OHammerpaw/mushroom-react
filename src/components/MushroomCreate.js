@@ -9,6 +9,7 @@ const MushroomCreate = ({ user, msgAlert }) => {
     }
 
     const [mushroom, setMushroom] = useState(defaultMushroom)
+    const [isChecked, setIsChecked] = useState(false)
 
     const handleChange = (event) => {
         setMushroom({...mushroom, [event.target.name]: event.target.value})

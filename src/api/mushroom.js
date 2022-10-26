@@ -47,3 +47,16 @@ export const mushroomUpdate = (data, user, id) => {
 		},
 	})
 }
+
+export const mushroomDelete = (data, user, id) => {
+	return axios({
+		method: 'DELETE',
+		url: apiUrl + '/mushrooms/' + id,
+		data: {
+			mushroom: data,
+		},
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
