@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react' 
 import { useParams } from 'react-router-dom'
-import { mushroomShow } from '../api/mushroom'
+import { mushroomShow, mushroomUpdate } from '../api/mushroom'
+import MushroomUpdate from './MushroomUpdate'
 
 
 const MushroomShow = ({ user, msgAlert }) => {
 
     const [mushroom, setMushroom] = useState({})
+    const [isUpdateShown, setIsUpdateShown] = useState(false)
 
     const { id } = useParams()
 
@@ -24,13 +26,45 @@ const MushroomShow = ({ user, msgAlert }) => {
         })
     }, [])
 
+    const toggleShowUpdate = () => {
+        setIsUpdateShown(prevUpdateShown => !prevUpdateShown)
+    }
+
+    const handleChange = (event) => {
+        setMushroom({...mushroom, [event.target.name]: event.target.value})
+    }
+
+    const handleUpdateMushroom = () => {
+        mushroomUpdate(mushroom, user, id)
+        .then(() => {
+            msgAlert({
+                heading: 'Success',
+                message: 'Updating Mushroom',
+                variant: 'success'
+            })
+        })
+        .catch((error) => {
+            msgAlert({
+                heading: 'Failure',
+                message: 'Update Mushroom Failure' + error,
+                variant: 'danger'
+            })
+        })
+    }
+
     return (
         <>
             <h3>Common Name: {mushroom.commonName}</h3>
-            <p>
-                Scientific Name: {mushroom.scientificName},
-                Edible? {mushroom.isEdible}
-            </p>
+            <h1>Scientific Name: {mushroom.scientificName}</h1>
+            <p>Edible? {mushroom.isEdible}</p>
+            <button onClick={toggleShowUpdate}>Toggle Update</button>
+				{isUpdateShown && (
+					<MushroomUpdate
+						mushroom={mushroom}
+						handleChange={handleChange}
+						handleUpdateMushroom={handleUpdateMushroom}
+					/>
+                )}
         </>
     )
 

@@ -33,3 +33,17 @@ export const mushroomShow = (user, id) => {
 		},
 	})
 }
+
+
+export const mushroomUpdate = (data, user, id) => {
+	return axios({
+		method: 'PATCH',
+		url: apiUrl + '/mushrooms/' + id,
+		data: {
+			mushroom: data,
+		},
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}

@@ -48,7 +48,7 @@ const MushroomCreate = ({ user, msgAlert }) => {
 				/>
                 <input 
                     class='form-check-input'
-                    type='chackbox'
+                    type='checkbox'
                     name='isEdible'
                     onChange={handleChange}
                 />
