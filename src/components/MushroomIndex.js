@@ -23,7 +23,7 @@ const MushroomIndex = ({ user, msgAlert }) => {
     const allMushroomsJSX = allMushrooms.map(mushroom => {
         return (
             <Link to={mushroom._id} key={mushroom._id}>
-            <li>Common Name: {mushroom.commonName} Scientific Name: {mushroom.scientificName} Edible?: {mushroom.isEdible} </li>
+            <li>Common Name: {mushroom.commonName}, Scientific Name: {mushroom.scientificName}, Edible?: {mushroom.isEdible} </li>
             </Link>
         )
     })

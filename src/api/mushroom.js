@@ -23,3 +23,13 @@ export const mushroomIndex = (user) => {
 		},
 	})
 }
+
+export const mushroomShow = (user, id) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/mushrooms/' + id,
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}
