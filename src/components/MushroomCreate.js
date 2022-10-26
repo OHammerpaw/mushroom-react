@@ -46,6 +46,13 @@ const MushroomCreate = ({ user, msgAlert }) => {
 					name='scientificName'
 					onChange={handleChange}
 				/>
+                <input 
+                    class='form-check-input'
+                    type='chackbox'
+                    name='isEdible'
+                    onChange={handleChange}
+                />
+
 				<button onClick={handleCreateMushroom}>Create Mushroom</button>
 			</>
 		)

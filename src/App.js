@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import MushroomCreate from './components/MushroomCreate'
+import MushroomIndex from './components/MushroomIndex'
 
 const App = () => {
 
@@ -69,11 +70,18 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		   <Route
+            path='/create'
+            element={
+              <RequireAuth user={user}>
+                <MushroomCreate msgAlert={msgAlert} user={user} />
+              </RequireAuth>}
+          />
 		    <Route
             path='/mushrooms'
             element={
               <RequireAuth user={user}>
-                <MushroomCreate msgAlert={msgAlert} user={user} />
+                <MushroomIndex msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
 				</Routes>

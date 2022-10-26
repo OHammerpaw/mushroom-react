@@ -13,3 +13,13 @@ export const mushroomCreate = (data, user) => {
         }
 	})
 }
+
+export const mushroomIndex = (user) => {
+	return axios({
+		method: 'GET',
+		url: apiUrl + '/mushrooms',
+		headers: {
+			Authorization: `Token token=${user.token}`,
+		},
+	})
+}

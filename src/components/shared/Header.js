@@ -20,6 +20,11 @@ const authenticatedOptions = (
 		</Nav.Item>
 		<Nav.Item>
 			<Link to='mushrooms' style={linkStyle}>
+				Index All Mushrooms
+			</Link>
+		</Nav.Item>
+		<Nav.Item>
+			<Link to='create' style={linkStyle}>
 				Create a Mushroom
 			</Link>
 		</Nav.Item>
