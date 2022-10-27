@@ -80,7 +80,7 @@ const MushroomShow = ({ user, msgAlert }) => {
         <>
             <h3>Common Name: {mushroom.commonName}</h3>
             <h1>Scientific Name: {mushroom.scientificName}</h1>
-            <p>Edible? {mushroom.isEdible}</p>
+            <p>Edible? {mushroom.isEdible ? 'true' : 'false'}</p>
             <button onClick={toggleShowUpdate}>Toggle Update</button>
 				{isUpdateShown && (
 					<MushroomUpdate

@@ -5,13 +5,19 @@ const MushroomCreate = ({ user, msgAlert }) => {
 
     const defaultMushroom = {
         commonName: '',
-        scientificName: ''
+        scientificName: '',
+        isEdible: false
     }
 
     const [mushroom, setMushroom] = useState(defaultMushroom)
     const [isChecked, setIsChecked] = useState(false)
 
     const handleChange = (event) => {
+        setMushroom({...mushroom, [event.target.name]: event.target.value})
+    }
+
+    const handleCheckboxChange = (event) => {
+        
         setMushroom({...mushroom, [event.target.name]: event.target.value})
     }
 
@@ -37,21 +43,25 @@ const MushroomCreate = ({ user, msgAlert }) => {
 			<>
 				<input
 					type='text'
+                    placeholder='Common Name'
 					value={mushroom.commonName}
 					name='commonName'
 					onChange={handleChange}
 				/>
 				<input
 					type='text'
+                    placeholder='Scientific Name'
 					value={mushroom.scientificName}
 					name='scientificName'
 					onChange={handleChange}
 				/>
+                Is it edible?
                 <input 
-                    class='form-check-input'
                     type='checkbox'
+                    value={mushroom.isEdible}
                     name='isEdible'
-                    onChange={handleChange}
+                    checked={mushroom.isEdible}
+                    onChange={handleCheckboxChange}
                 />
 
 				<button onClick={handleCreateMushroom}>Create Mushroom</button>
