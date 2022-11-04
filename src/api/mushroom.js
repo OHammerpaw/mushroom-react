@@ -18,9 +18,6 @@ export const mushroomIndex = (user) => {
 	return axios({
 		method: 'GET',
 		url: apiUrl + '/mushrooms',
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
 	})
 }
 
@@ -28,9 +25,6 @@ export const mushroomShow = (user, id) => {
 	return axios({
 		method: 'GET',
 		url: apiUrl + '/mushrooms/' + id,
-		headers: {
-			Authorization: `Token token=${user.token}`,
-		},
 	})
 }
 
@@ -52,9 +46,6 @@ export const mushroomDelete = (data, user, id) => {
 	return axios({
 		method: 'DELETE',
 		url: apiUrl + '/mushrooms/' + id,
-		data: {
-			mushroom: data,
-		},
 		headers: {
 			Authorization: `Token token=${user.token}`,
 		},
