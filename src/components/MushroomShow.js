@@ -26,7 +26,7 @@ const MushroomShow = ({ user, msgAlert }) => {
                 variant: 'danger'
             })
         })
-    }, [])
+    })
 
     const toggleShowUpdate = () => {
         setIsUpdateShown(prevUpdateShown => !prevUpdateShown)

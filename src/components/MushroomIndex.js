@@ -18,7 +18,7 @@ const MushroomIndex = ({ user, msgAlert }) => {
                 variant: 'danger'
             })
         })
-    }, [])
+    })
 
     const allMushroomsJSX = allMushrooms.map(mushroom => {
         return (
