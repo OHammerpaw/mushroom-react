@@ -1,5 +1,5 @@
 import React, { useState } from 'react' 
-import { mushroomCreate } from '../api/mushroom'
+import { mushroomCreate } from '../../api/mushroom'
 import { useNavigate } from 'react-router-dom'
 
 import MushroomForm from '../shared/MushroomForm'
@@ -16,8 +16,8 @@ const MushroomCreate = ({ user, msgAlert }) => {
     const [mushroom, setMushroom] = useState(defaultMushroom)
    
 
-    const handleChange = (event) => {
-        setPet(prevMushroom => {
+    const handleChange = (e) => {
+        setMushroom(prevMushroom => {
             const updatedName = e.target.name
             let updatedValue = e.target.value
            

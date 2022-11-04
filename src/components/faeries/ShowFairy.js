@@ -10,7 +10,7 @@ const ShowFairy = (props) => {
     const [editModalShow, setEditModalShow] = useState(false)
 
     // this will set the color of the card based on the condition
-    const setBgCondition = (cond) => {
+    const setBgCondition = (spec) => {
         if (spec === 'pixie') {
             return({ width: '18rem', backgroundColor: 'lightpink'})
         } else if (spec === 'sprite') {
@@ -42,7 +42,7 @@ const ShowFairy = (props) => {
 
     return (
         <>
-            <Card className="m-2" style={setBgCondition(toy.condition)}>
+            <Card className="m-2" style={setBgCondition(fairy.type)}>
                 <Card.Header>{ fairy.name }</Card.Header>
                 <Card.Body>
                     <small>{ fairy.description }</small><br/>

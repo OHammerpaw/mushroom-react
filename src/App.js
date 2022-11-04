@@ -12,9 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import MushroomCreate from './components/MushroomCreate'
-import MushroomIndex from './components/MushroomIndex'
-import MushroomShow from './components/MushroomShow'
+import MushroomCreate from './components/mushrooms/MushroomCreate'
+import MushroomIndex from './components/mushrooms/MushroomIndex'
+import MushroomShow from './components/mushrooms/MushroomShow'
 
 const App = () => {
 

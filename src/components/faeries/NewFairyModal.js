@@ -33,7 +33,7 @@ const NewFairyModal = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        createToy(user, mushroom._id, fairy)
+        createFairy(user, mushroom._id, fairy)
             .then(() => handleClose())
             .then(() => {
                 msgAlert({

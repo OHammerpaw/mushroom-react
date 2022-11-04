@@ -1,3 +1,4 @@
+import { Spinner } from 'react-bootstrap'
 
 const LoadingScreen = () => (
     <div className="container-md m-2" style={{textAlign: 'center'}}>
