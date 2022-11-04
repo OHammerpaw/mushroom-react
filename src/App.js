@@ -88,9 +88,8 @@ const App = () => {
 		  <Route
             path='/mushrooms/:id'
             element={
-              <RequireAuth user={user}>
                 <MushroomShow msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
+            }
           />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
