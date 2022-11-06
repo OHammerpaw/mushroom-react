@@ -40,7 +40,7 @@ const MushroomIndex = ({ user, msgAlert }) => {
             <Card.Header>{ mushroom.commonName }</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={ `/mushrooms/${mushroom.id}` }>View { mushroom.commonName }</Link>
+                    <Link to={ `/mushrooms/${mushroom._id}` }>View { mushroom.commonName }</Link>
                 </Card.Text>
             </Card.Body>
         </Card>
