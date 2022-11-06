@@ -60,7 +60,7 @@ const MushroomShow = ({ user, msgAlert }) => {
 
     let fairyCards
     if (mushroom) {
-        if (mushroom.fairies.length > 0) {
+        if (mushroom.faeries.length > 0) {
            
            fairyCards = mushroom.faeries.map(fairy => (
                 <ShowFairy
