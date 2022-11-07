@@ -11,16 +11,16 @@ const MushroomForm = (props) => {
                 <Form.Label>Common Name:</Form.Label>
                 <Form.Control 
                     placeholder="enter common name of mushroom"
-                    name="name"
-                    id="name"
+                    name="commonName"
+                    id="commonName"
                     value= { mushroom.commonName }
                     onChange={ handleChange }
                 />
                 <Form.Label>Scientific Name:</Form.Label>
                 <Form.Control 
                     placeholder="enter scientific name of mushroom"
-                    name="type"
-                    id="type"
+                    name="scientificName"
+                    id="scientificName"
                     value= { mushroom.scientificName }
                     onChange={ handleChange }
                 />
