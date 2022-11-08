@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: '<https://mushroom-mushroom-api.fly.dev',
+	production: 'https://mushroom-mushroom-api.fly.dev',
 	development: 'http://localhost:8000',
 }
 
